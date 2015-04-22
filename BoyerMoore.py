@@ -23,6 +23,9 @@ if os.path.isdir(sys.argv[1]) == 0:
     sys.exit(0)
 
 for textfile in os.listdir(sys.argv[1]):
+    if textfile[0] == '.':
+        continue
+    
     print "Checking file: ", textfile
 
     text = open(os.path.join(sys.argv[1], textfile)).read()
